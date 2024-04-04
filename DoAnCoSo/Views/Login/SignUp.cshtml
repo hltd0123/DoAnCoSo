@@ -1,0 +1,58 @@
+﻿@model DoAnCoSo.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+     <link rel="stylesheet" href="~/css/Design.css" asp-append-version="true" />
+    <title>SignUp</title>
+</head>
+<body>
+
+<h4>User</h4>
+<hr />
+    <div class="wrapper">
+        <form class="login_box" asp-action="SignUp">
+            <div class="login-header">
+                <span>SignUp</span>
+            </div>
+
+            <div class="input_box">
+                <input type="text" id="user" class="input-field" required placeholder="Username" asp-for="Name" value="@Model.Name">
+                <i class="bx bx-user icon"></i>
+            </div>
+
+            <div class="input_box">
+                <input type="password" id="pass" class="input-field" required placeholder="Password" asp-for="Password" value="@Model.Password">
+                <i class="bx bx-lock-alt icon"></i>
+            </div>
+
+            <div class="input_box">
+                <input type="email" id="Email" class="input-field" required placeholder="Email" asp-for="Email" value="@Model.Email">
+                <i class="bx bx-lock-alt icon"></i>
+            </div>
+           
+            <div class="input_box">
+                <input type="text" id="Decription" class="input-field" placeholder="Mô tả" asp-for="Decription" value="@Model.Decription">
+                <i class="bx bx-lock-alt icon"></i>
+            </div>
+
+            <div class="input_box">
+                <input type="submit" class="input-submit" value="SignUp">
+            </div>
+            <div class="register">
+                <span>Don't have an account? <a asp-action="SignUp">Register</a></span>
+            </div>
+        </form>
+    </div>
+<div>
+    <a asp-action="Index">Về đăng nhập</a>
+</div>
+
+</body>
+</html>
