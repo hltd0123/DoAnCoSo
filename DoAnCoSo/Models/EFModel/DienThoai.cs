@@ -13,7 +13,8 @@ namespace DoAnCoSo.Models
         [Length(1,50,ErrorMessage ="Tên tối thiểu là 1 tối đa 50 ký tự")]
         public string Name { get; set; }
         [ForeignKey("DienThoaiID")]
-        List<OpLung> DanhSachOpLung { get; set; }
+        public List<OpLung> DanhSachOpLung { get; set; }
+ 
         [DefaultValue(false)]
         public bool Blocked { get; set; }
     }

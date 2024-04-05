@@ -19,14 +19,26 @@ namespace DoAnCoSo.Controllers
         }
         public IActionResult Index()
         {
+            return RedirectToAction("Login");
+        }
+        [Route("{view=Index}")]
+        [HttpPost]
+        public IActionResult Index(string view, User inputUser = null)
+        {
+            if (inputUser != null)
+                return View(view);
+            return RedirectToAction("Login");
+        }
+        public IActionResult Login()
+        {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Index(User inputUser)
+        public async Task<IActionResult> Login(User inputUser)
         {
             if (await _loginAction.CheckLoginAsyn(inputUser.Name, inputUser.Password, true))
             {
-                return RedirectToAction("Index", "Home", inputUser.Name);
+                return RedirectToAction("Index", inputUser);
             }
             return View(inputUser);
         }

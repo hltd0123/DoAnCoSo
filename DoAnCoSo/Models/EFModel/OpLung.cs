@@ -16,7 +16,6 @@ namespace DoAnCoSo.Models
         public string? Description { get; set; }
         public string? ImageUrl { get; set; }
         [ForeignKey("OpLungID")]
-        public int DienThoaiId { get; set; }
         public DienThoai? DienThoaiLienKet { get; set; }
         [DefaultValue(false)]
         public bool Blocked { get; set; }
